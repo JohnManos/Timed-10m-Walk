@@ -1,0 +1,22 @@
+<h1 class="stopwatch-time-container">{{time}}</h1>
+<div class="stopwatch-buttons-container">
+  <div *ngIf="!this.stopwatchService.isRunning else stopButton">
+    <button class="stopwatch-button" mat-flat-button color="primary" (click)="start()">Start</button>
+  </div>
+  <ng-template #stopButton>
+    <button class="stopwatch-button" mat-flat-button color="warn" (click)="stop()">Stop</button>
+  </ng-template>
+  <button class="stopwatch-button" mat-flat-button color="accent" (click)="clear()">Clear</button>
+</div>
+  <mat-radio-group class="stopwatch-buttons-container" [(ngModel)]="trialType">
+    <mat-radio-button class="stopwatch-button" value="comfort">Comfort Trial</mat-radio-button>
+    <mat-radio-button class="stopwatch-button" value="fast">Fast Trial</mat-radio-button>
+  </mat-radio-group>
+<div class="stopwatch-buttons-container" *ngIf="!this.stopwatchService.isRunning else placeholder">
+  <button class="stopwatch-button" mat-flat-button color="primary" (click)="add()">Add</button>
+</div>
+<ng-template #placeholder>
+  <div class="stopwatch-buttons-container">
+    <button mat-flat-button color="primary" disabled>Add</button>
+  </div>
+</ng-template>

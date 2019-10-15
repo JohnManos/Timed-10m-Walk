@@ -1,0 +1,38 @@
+<mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+  <ng-container matColumnDef="comfortTime">
+    <mat-header-cell *matHeaderCellDef>Comfort Trial Time</mat-header-cell>
+    <mat-cell *matCellDef="let trial"> {{trial.comfortTime}}</mat-cell>
+    <mat-footer-cell *matFooterCellDef></mat-footer-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="comfortVelocity">
+    <mat-header-cell *matHeaderCellDef>Comfort Trial Velocity</mat-header-cell>
+    <mat-cell *matCellDef="let trial"> {{trial.comfortVelocity}}</mat-cell>
+    <mat-footer-cell *matFooterCellDef>{{getAverageComfortVelocity()}}</mat-footer-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="fastTime">
+      <mat-header-cell *matHeaderCellDef>Fast Trial Time</mat-header-cell>
+      <mat-cell *matCellDef="let trial"> {{trial.fastTime}}</mat-cell>
+      <mat-footer-cell *matFooterCellDef></mat-footer-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="fastVelocity">
+    <mat-header-cell *matHeaderCellDef>Fast Trial Velocity</mat-header-cell>
+    <mat-cell *matCellDef="let trial"> {{trial.fastVelocity}}</mat-cell>
+    <mat-footer-cell *matFooterCellDef>{{getAverageFastVelocity()}}</mat-footer-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="action">
+    <mat-header-cell *matHeaderCellDef>Action</mat-header-cell>
+    <mat-cell *matCellDef="let trial">
+      <button mat-flat-button color="warn" (click)="deleteTrial(trial)">Delete</button>
+    </mat-cell>
+    <mat-footer-cell *matFooterCellDef></mat-footer-cell>
+  </ng-container>
+
+  <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+  <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+  <mat-footer-row *matFooterRowDef="displayedColumns"></mat-footer-row>
+</mat-table>
