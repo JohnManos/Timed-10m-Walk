@@ -37,7 +37,7 @@ export class ResultsService {
     if (trial.comfortTime != null) {
       --this.numComfortTrials;
     }
-    else if (trial.fastTime != null) {
+    if (trial.fastTime != null) {
       --this.numFastTrials;
     }
     this.trials.splice(this.trials.indexOf(trial), 1);
