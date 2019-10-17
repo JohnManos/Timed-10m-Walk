@@ -12,7 +12,7 @@
     <mat-radio-button class="stopwatch-button" value="comfort">Comfort Trial</mat-radio-button>
     <mat-radio-button class="stopwatch-button" value="fast">Fast Trial</mat-radio-button>
   </mat-radio-group>
-<div class="stopwatch-buttons-container" *ngIf="!this.stopwatchService.isRunning else placeholder">
+<div class="stopwatch-buttons-container" *ngIf="(!this.stopwatchService.isRunning && this.trialType != undefined) else placeholder">
   <button class="stopwatch-button" mat-flat-button color="primary" (click)="add()">Add</button>
 </div>
 <ng-template #placeholder>
