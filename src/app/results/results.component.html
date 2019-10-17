@@ -8,8 +8,8 @@
 
   <ng-container matColumnDef="comfortVelocity">
     <mat-header-cell *matHeaderCellDef>Comfort Trial Velocity</mat-header-cell>
-    <mat-cell *matCellDef="let trial"> {{trial.comfortVelocity}}</mat-cell>
-    <mat-footer-cell *matFooterCellDef>{{getAverageComfortVelocity()}}</mat-footer-cell>
+    <mat-cell *matCellDef="let trial"> {{trial.comfortVelocity ? trial.comfortVelocity + ' m/s' : '-'}}</mat-cell>
+    <mat-footer-cell *matFooterCellDef>{{getAverageComfortVelocity()}} m/s</mat-footer-cell>
   </ng-container>
 
   <ng-container matColumnDef="fastTime">
@@ -20,8 +20,8 @@
 
   <ng-container matColumnDef="fastVelocity">
     <mat-header-cell *matHeaderCellDef>Fast Trial Velocity</mat-header-cell>
-    <mat-cell *matCellDef="let trial"> {{trial.fastVelocity}}</mat-cell>
-    <mat-footer-cell *matFooterCellDef>{{getAverageFastVelocity()}}</mat-footer-cell>
+    <mat-cell *matCellDef="let trial"> {{trial.fastVelocity ? trial.fastVelocity + ' m/s' : '-'}}</mat-cell>
+    <mat-footer-cell *matFooterCellDef>{{getAverageFastVelocity()}} m/s</mat-footer-cell>
   </ng-container>
 
   <ng-container matColumnDef="action">
